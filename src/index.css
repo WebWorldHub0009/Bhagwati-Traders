@@ -1,0 +1,7 @@
+@import "tailwindcss";
+h1, h2, h3, .heading {
+  font-family: 'Cinzel', serif;
+}
+body, p, span {
+  font-family: 'Quicksand', sans-serif;
+}
