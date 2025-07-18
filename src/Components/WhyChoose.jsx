@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaCheckCircle, FaLeaf } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import about1 from "../assets/images/box1.jpg"; // Replace with ghee-related image
-import about2 from "../assets/images/box3p.png"; // Replace with another ghee product image
+import about1 from "../assets/images/box1.jpg";     // main ghee image
+import about2 from "../assets/images/box3p.png";   // secondary ghee image
 
 const WhyChoose = () => {
   const { ref, inView } = useInView({
@@ -29,32 +29,56 @@ const WhyChoose = () => {
         ref={ref}
         className="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6 relative z-10"
       >
-        {/* Left Side - Images */}
+        {/* LEFT: Image Cluster */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
+          {/* Main Image */}
           <motion.img
             src={about1}
             alt="Pure Desi Ghee"
-            className="rounded-xl shadow-2xl w-72 h-48 md:w-96 md:h-64 object-cover"
+            /* keep wrapper footprint generous, just limit image height */
+            className="
+              rounded-xl shadow-2xl
+              max-w-[16rem] sm:max-w-[20rem] md:max-w-[24rem]
+              max-h-[10rem] sm:max-h-[14rem] md:max-h-[16rem]
+              w-auto h-auto object-contain
+            "
             initial={{ x: -100, opacity: 0 }}
             animate={inView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           />
 
+          {/* Overlay / Accent Image */}
           <motion.img
             src={about2}
             alt="Bhagwati Ghee Product"
-            className="rounded-xl shadow-xl w-24 h-24 md:w-40 md:h-40 object-cover absolute bottom-[-30px] right-[10px]"
+            className="
+              rounded-xl shadow-xl
+              absolute
+              bottom-[-20px] right-[10px]
+              max-w-[5rem] sm:max-w-[6.5rem] md:max-w-[8rem]
+              max-h-[5rem] sm:max-h-[6.5rem] md:max-h-[8rem]
+              w-auto h-auto object-contain
+              shrink-0
+            "
             initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
             animate={
               inView
                 ? { opacity: 1, scale: 1, rotate: 0 }
                 : { opacity: 0, scale: 0.5, rotate: -15 }
             }
-            transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
           />
 
+          {/* Bubble Badge */}
           <motion.div
-            className="absolute top-[-20px] left-[30px] bg-[#D4B25F] text-white p-4 md:p-6 rounded-full shadow-lg text-center text-xs md:text-sm font-semibold"
+            className="
+              absolute -top-4 left-4
+              bg-[#D4B25F] text-white
+              px-3 py-2 md:px-4 md:py-3
+              rounded-full shadow-lg
+              text-center
+              text-[10px] sm:text-xs md:text-sm font-semibold
+            "
             initial={{ scale: 0 }}
             animate={inView ? { scale: 1 } : { scale: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -63,7 +87,7 @@ const WhyChoose = () => {
           </motion.div>
         </div>
 
-        {/* Right Side - Content */}
+        {/* RIGHT: Text Content */}
         <motion.div
           className="w-full md:w-1/2"
           initial={{ x: 100, opacity: 0 }}
@@ -74,15 +98,16 @@ const WhyChoose = () => {
             Who We Are
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-snug">
-            Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4B25F] to-[#8F5A3C]">
+            Why Choose{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4B25F] to-[#8F5A3C]">
               BHAGWATI TRADERS
             </span>
           </h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
             At Bhagwati Traders, we deliver traditionally prepared, farm-fresh
             desi ghee packed with natural aroma and authentic flavor. Our
-            process ensures purity, nutrition, and rich granular texture you can
-            trust for your family.
+            process ensures purity, nutrition, and the rich granular texture
+            you can trust for your family.
           </p>
 
           <div className="flex flex-col gap-4 mb-8">
@@ -101,7 +126,7 @@ const WhyChoose = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <Link
               to="/about"
               className="px-6 py-3 bg-[#D4B25F] hover:bg-[#B8933B] text-white rounded-lg transition font-semibold"

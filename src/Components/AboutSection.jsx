@@ -4,7 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { FaAward, FaFlask, FaLeaf, FaChevronDown } from "react-icons/fa";
 import { GiCow } from "react-icons/gi"; // ✅ added cow icon
 
-import aboutImg from "../assets/images/box4.jpg"; // TODO: update path
+import aboutImg from "../assets/images/jar5.jpg"; // TODO: update path
 import aboutBg from "../assets/images/abbg.avif"; // TODO: update path
 import { Link } from "react-router-dom";
 

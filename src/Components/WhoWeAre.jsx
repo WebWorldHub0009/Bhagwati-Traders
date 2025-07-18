@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 // 🍯 Replace with your actual ghee/product/lifestyle images
-import img1 from "../assets/images/box1.jpg";
-import img2 from "../assets/images/box2.jpg";
-import img3 from "../assets/images/box3.jpg";
-import img4 from "../assets/images/box4.jpg";
+import img1 from "../assets/images/jar1.avif";
+import img2 from "../assets/images/jar2.jpg";
+import img3 from "../assets/images/jar3.jpg";
+import img4 from "../assets/images/jar4.jpg";
 
 const defaultFaqs = [
   {
@@ -33,11 +33,6 @@ const defaultFaqs = [
     question: "What is the shelf life?",
     answer:
       "Unopened: up to 9–12 months depending on batch. Once opened, consume within 6 months for best flavor and nutrition. Always reseal the jar tightly.",
-  },
-  {
-    question: "Do you ship across India?",
-    answer:
-      "Yes! We ship pan-India with tamper-evident packaging so your ghee arrives safe, sealed, and fresh.",
   },
 ];
 
